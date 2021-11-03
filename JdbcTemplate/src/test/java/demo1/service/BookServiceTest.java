@@ -14,7 +14,6 @@ class BookServiceTest {
         book.setUserId("9");
         book.setUsername("Scala");
         book.setUstatus("s");
-        System.out.println("hahaha");
         bookService.addBook(book);
     }
 }
