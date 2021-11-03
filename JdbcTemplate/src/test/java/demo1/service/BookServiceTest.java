@@ -11,9 +11,10 @@ class BookServiceTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("configjdbc.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
         Book book = new Book();
-        book.setUserId("8");
+        book.setUserId("9");
         book.setUsername("Scala");
         book.setUstatus("s");
+        System.out.println("hahaha");
         bookService.addBook(book);
     }
 }
