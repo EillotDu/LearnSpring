@@ -83,4 +83,11 @@ public class BookDaoImpl implements BookDao {
         System.out.println(Arrays.toString(ints));
     }
 
+    @Override
+    public void batchDeleteBook(List<Object[]> batchARgs) {
+        String sql = "delete from t_book where user_id=?";
+        int[] ints = jdbcTemplate.batchUpdate(sql, batchARgs);
+        System.out.println(Arrays.toString(ints));
+    }
+
 }

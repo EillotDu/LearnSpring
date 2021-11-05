@@ -21,4 +21,6 @@ public interface BookDao {
     void batchAddBook(List<Object[]> batchArgs);
 
     void batchUpdateBook(List<Object[]> batchARgs);
+
+    void batchDeleteBook(List<Object[]> batchARgs);
 }

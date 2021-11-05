@@ -23,7 +23,7 @@ class BookServiceTest {
     @Test
     public void testJdbcTemplate() {
 
-        book.setUserId("10");
+        book.setUserId("15");
         book.setUsername("Scala");
         book.setUstatus("s");
         bookService.addBook(book);
@@ -78,5 +78,17 @@ class BookServiceTest {
         batchArgs.add(o2);
         batchArgs.add(o3);
         bookService.batchUpdate(batchArgs);
+    }
+
+    @Test
+    public void testBatchDelete() {
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"2"};
+        Object[] o2 = {"3"};
+        Object[] o3 = {"14"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        bookService.batchDelete(batchArgs);
     }
 }
