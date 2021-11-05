@@ -11,4 +11,6 @@ public interface BookDao {
     void delete(String id);
 
     int selectCount();
+
+    Book findBookInfo(String id);
 }

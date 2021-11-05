@@ -2,6 +2,7 @@ package demo1.dao;
 
 import demo1.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -47,5 +48,13 @@ public class BookDaoImpl implements BookDao {
         String sql = "select count(*) from t_book";
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
         return Optional.ofNullable(count).orElse(100000);
+    }
+
+    //查询返回记录数
+    @Override
+    public Book findBookInfo(String id) {
+        String sql = "select * from t_book where user_id=?";
+        //调用方法
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Book.class), id);
     }
 }
