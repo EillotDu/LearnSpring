@@ -1,10 +1,12 @@
-package demo1.service;
+package com.dcupup.service;
 
-import demo1.entity.Book;
+import com.dcupup.entity.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.List;
 
 class BookServiceTest {
     private Book book;
@@ -45,5 +47,11 @@ class BookServiceTest {
     public void testQueryReturnObject() {
         Book one = bookService.findOne("1");
         System.out.println(one);
+    }
+
+    @Test
+    public void testQueryReturnList() {
+        List<Book> all = bookService.findAll();
+        System.out.println(all);
     }
 }

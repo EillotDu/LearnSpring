@@ -1,11 +1,12 @@
-package demo1.dao;
+package com.dcupup.dao;
 
-import demo1.entity.Book;
+import com.dcupup.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -56,5 +57,12 @@ public class BookDaoImpl implements BookDao {
         String sql = "select * from t_book where user_id=?";
         //调用方法
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Book.class), id);
+    }
+
+    //查询返回集合
+    @Override
+    public List<Book> findAllBook() {
+        String sql = "select * from t_book";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Book.class));
     }
 }

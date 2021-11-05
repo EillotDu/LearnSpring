@@ -6,7 +6,7 @@
                             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--开启组件扫描-->
-    <context:component-scan base-package="demo1"/>
+    <context:component-scan base-package="com.dcupup"/>
 
     <!--数据库连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">

@@ -1,4 +1,4 @@
-package demo1.entity;
+package com.dcupup.entity;
 
 public class Book {
 

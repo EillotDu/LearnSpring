@@ -1,6 +1,8 @@
-package demo1.dao;
+package com.dcupup.dao;
 
-import demo1.entity.Book;
+import com.dcupup.entity.Book;
+
+import java.util.List;
 
 public interface BookDao {
     //添加到方法
@@ -13,4 +15,6 @@ public interface BookDao {
     int selectCount();
 
     Book findBookInfo(String id);
+
+    List<Book> findAllBook();
 }
