@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public class BookDaoImpl implements BookDao {
 
@@ -37,5 +39,13 @@ public class BookDaoImpl implements BookDao {
         String sql = "delete from t_book where user_id=?";
         int update = jdbcTemplate.update(sql, id);
         System.out.println(update);
+    }
+
+    //查询表记录数
+    @Override
+    public int selectCount() {
+        String sql = "select count(*) from t_book";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+        return Optional.ofNullable(count).orElse(100000);
     }
 }

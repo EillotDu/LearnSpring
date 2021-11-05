@@ -9,4 +9,6 @@ public interface BookDao {
     void updateBook(Book book);
 
     void delete(String id);
+
+    int selectCount();
 }
