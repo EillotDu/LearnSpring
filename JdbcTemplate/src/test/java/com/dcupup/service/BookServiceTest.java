@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class BookServiceTest {
@@ -53,5 +54,17 @@ class BookServiceTest {
     public void testQueryReturnList() {
         List<Book> all = bookService.findAll();
         System.out.println(all);
+    }
+
+    @Test
+    public void testBatchAdd() {
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 ={"2", "python", "b"};
+        Object[] o2 ={"3", "Jack", "d"};
+        Object[] o3 ={"14", "Peter", "s"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        bookService.batchAdd(batchArgs);
     }
 }
