@@ -10,9 +10,13 @@ import java.util.List;
 @Service
 public class BookService {
 
-    //注入dao
+    private final BookDao bookDao;
+
+    //基于构造函数注入
     @Autowired
-    private BookDao bookDao;
+    public BookService(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
 
     //添加的方法
     public void addBook(Book book) {
@@ -43,6 +47,7 @@ public class BookService {
     public List<Book> findAll() {
         return bookDao.findAllBook();
     }
+
     //批量添加
     public void batchAdd(List<Object[]> batchArgs) {
         bookDao.batchAddBook(batchArgs);

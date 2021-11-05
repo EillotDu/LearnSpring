@@ -13,9 +13,13 @@ import java.util.Optional;
 @Repository
 public class BookDaoImpl implements BookDao {
 
-    //注入JdbcTemplate
-    @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    //基于setter方法注入JdbcTemplate
+    @Autowired
+    private void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public void add(Book book) {

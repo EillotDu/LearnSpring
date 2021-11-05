@@ -23,8 +23,8 @@ class BookServiceTest {
     @Test
     public void testJdbcTemplate() {
 
-        book.setUserId("15");
-        book.setUsername("Scala");
+        book.setUserId("17");
+        book.setUsername("HaHaHa");
         book.setUstatus("s");
         bookService.addBook(book);
     }
