@@ -59,12 +59,24 @@ class BookServiceTest {
     @Test
     public void testBatchAdd() {
         List<Object[]> batchArgs = new ArrayList<>();
-        Object[] o1 ={"2", "python", "b"};
-        Object[] o2 ={"3", "Jack", "d"};
-        Object[] o3 ={"14", "Peter", "s"};
+        Object[] o1 = {"2", "python", "b"};
+        Object[] o2 = {"3", "Jack", "d"};
+        Object[] o3 = {"14", "Peter", "s"};
         batchArgs.add(o1);
         batchArgs.add(o2);
         batchArgs.add(o3);
         bookService.batchAdd(batchArgs);
+    }
+
+    @Test
+    public void testBatchUpdate() {
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"python9090", "b", "2"};
+        Object[] o2 = {"Jack9090", "d", "3"};
+        Object[] o3 = {"Peter9090", "d", "14"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        bookService.batchUpdate(batchArgs);
     }
 }
