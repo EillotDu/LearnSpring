@@ -1,7 +1,7 @@
-package com.dcupup.service;
+package com.crud.service;
 
-import com.dcupup.entity.Book;
-import com.dcupup.dao.BookDao;
+import com.crud.entity.Book;
+import com.crud.dao.BookDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
