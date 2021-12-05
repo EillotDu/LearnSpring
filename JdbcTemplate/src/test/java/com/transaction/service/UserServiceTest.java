@@ -7,16 +7,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 class UserServiceTest {
-    UserService userService;
-
-    @BeforeEach
-    public void init() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("/configjdbc.xml");
-        userService = context.getBean("userService", UserService.class);
-    }
 
     @Test
     public void transferMoneyTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("/configjdbc.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        userService.accountMoney();
+    }
+
+    @Test
+    public void transferMoneyTestForXml() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("/xmlfortransactional.xml");
+        UserService userService = context.getBean("userService", UserService.class);
         userService.accountMoney();
     }
 
