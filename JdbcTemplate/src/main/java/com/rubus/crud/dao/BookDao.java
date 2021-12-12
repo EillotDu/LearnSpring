@@ -1,6 +1,6 @@
-package com.crud.dao;
+package com.rubus.crud.dao;
 
-import com.crud.entity.Book;
+import com.rubus.crud.entity.Book;
 
 import java.util.List;
 

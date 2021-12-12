@@ -1,7 +1,7 @@
-package com.crud.service;
+package com.rubus.crud.service;
 
-import com.crud.entity.Book;
-import com.crud.dao.BookDao;
+import com.rubus.crud.dao.BookDao;
+import com.rubus.crud.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

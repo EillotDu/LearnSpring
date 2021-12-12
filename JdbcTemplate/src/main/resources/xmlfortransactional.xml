@@ -10,8 +10,8 @@
                             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!--开启组件扫描-->
-    <context:component-scan base-package="com.crud"/>
-    <context:component-scan base-package="com.transaction"/>
+    <context:component-scan base-package="com.rubus.crud"/>
+    <context:component-scan base-package="com.rubus.transaction"/>
 
     <!--数据库连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
@@ -46,7 +46,7 @@
     <!--3 配置切入点和切面-->
     <aop:config>
         <!--配置切入点-->
-        <aop:pointcut id="pt" expression="execution(* com.transaction.service.UserService.*(..))"/>
+        <aop:pointcut id="pt" expression="execution(* com.rubus.transaction.service.UserService.*(..))"/>
         <!--配置切面-->
         <aop:advisor advice-ref="txadvice" pointcut-ref="pt"/>
     </aop:config>

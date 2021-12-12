@@ -1,6 +1,6 @@
-package com.crud.service;
+package com.rubus.crud.service;
 
-import com.crud.entity.Book;
+import com.rubus.crud.entity.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
