@@ -1,4 +1,4 @@
-package com.dcupup.entity;
+package com.rubus.crud.entity;
 
 public class Book {
 

@@ -1,6 +1,6 @@
-package com.dcupup.service;
+package com.rubus.crud.service;
 
-import com.dcupup.entity.Book;
+import com.rubus.crud.entity.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -23,7 +23,7 @@ class BookServiceTest {
     @Test
     public void testJdbcTemplate() {
 
-        book.setUserId("17");
+        book.setUserId("18");
         book.setUsername("HaHaHa");
         book.setUstatus("s");
         bookService.addBook(book);

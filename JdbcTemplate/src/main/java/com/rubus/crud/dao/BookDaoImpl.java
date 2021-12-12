@@ -1,6 +1,6 @@
-package com.dcupup.dao;
+package com.rubus.crud.dao;
 
-import com.dcupup.entity.Book;
+import com.rubus.crud.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
