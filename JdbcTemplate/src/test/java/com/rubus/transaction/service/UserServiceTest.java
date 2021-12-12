@@ -28,8 +28,6 @@ class UserServiceTest {
         ApplicationContext context = new AnnotationConfigApplicationContext(TxConfig.class);
         UserService userService = context.getBean("userService", UserService.class);
         userService.accountMoney();
-
-
     }
 
 }
