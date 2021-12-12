@@ -46,7 +46,7 @@
     <!--3 配置切入点和切面-->
     <aop:config>
         <!--配置切入点-->
-        <aop:pointcut id="pt" expression="execution(* com.rubus.transaction.service.UserService.*(..))"/>
+        <aop:pointcut id="pt" expression="execution(* com.rubus.service.UserService.*(..))"/>
         <!--配置切面-->
         <aop:advisor advice-ref="txadvice" pointcut-ref="pt"/>
     </aop:config>
