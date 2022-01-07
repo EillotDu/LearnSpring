@@ -1,4 +1,4 @@
-package com.example.demoreator.reactor8;
+package com.example.demoreator.streamapi;
 
 import org.junit.jupiter.api.Test;
 
