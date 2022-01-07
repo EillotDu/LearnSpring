@@ -2,6 +2,7 @@ package com.example.demoreator.streamapi;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class StreamTest2 {
@@ -27,6 +28,23 @@ public class StreamTest2 {
         System.out.println(Stream.of(1, 1, 2, 2, 3, 3, 4).max(Integer::compare));
         //min(Comparator c)-返回流中最小值
         //forEach(Consumer c)-内部迭代
+    }
+
+    //2. 规约
+    @Test
+    public void test2() {
+        //reduce(T identity, BinaryOperator)-可以将流中元素反复结合起来，得到一个值，返回T
+        //计算1-10的自然数规约
+        Stream<Integer> stream = Stream.iterate(1, n -> n + 1).limit(10);
+        //10 + 1 + 2 ...
+        Integer reduce = stream.reduce(10, Integer::sum);
+        System.out.println(reduce);
+
+        //reduce(BinaryOperator)-可以将流中元素反复结合起来，得到一个值。返回Optional<T>
+        Stream<Integer> stream1 = Stream.iterate(1, n -> n + 1).limit(10);
+        Optional<Integer> reduce1 = stream1.reduce(Integer::sum);
+        System.out.println(reduce1);
+
     }
 
 
