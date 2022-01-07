@@ -12,6 +12,7 @@
         <module>JdbcTemplate</module>
         <module>Aop</module>
         <module>Sping5NewFeature</module>
+        <module>WebFlux</module>
     </modules>
 
     <properties>
