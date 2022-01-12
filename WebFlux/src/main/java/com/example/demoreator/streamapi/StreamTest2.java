@@ -2,7 +2,10 @@ package com.example.demoreator.streamapi;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamTest2 {
@@ -47,5 +50,18 @@ public class StreamTest2 {
 
     }
 
+    //3. 收集
+    @Test
+    public void test3() {
+        // collect(Collector c) - 将流转换为其他形式。接收一个Collector接口的实现，用于给Stream中元素做汇总方法
+        Stream<Integer> stream1 = Stream.iterate(1, n -> n + 1).limit(10);
+        List<Integer> collect = stream1.collect(Collectors.toList());
+        collect.forEach(System.out::println);
+
+        Stream<Integer> stream2 = Stream.iterate(1, n -> n + 1).limit(10);
+        Set<Integer> collect1 = stream2.collect(Collectors.toSet());
+        collect.forEach(System.out::println);
+
+    }
 
 }
